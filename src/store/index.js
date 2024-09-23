@@ -24,6 +24,7 @@ export default createStore({
     isFooterMusic:true,//判断底部组件是否需要显示
     token:'',
     user:{},//用户信息
+    cookie:'',
   },
   getters: {
   },
@@ -69,7 +70,7 @@ export default createStore({
   actions: {
     getLyric:async function(context,value){
       let res=await getMusiclyric(value)
-      //console.log(res);
+      console.log(res);
       context.commit('updateLyricList',res.data.lrc)
     },
     getLogin:async function(context,value){
